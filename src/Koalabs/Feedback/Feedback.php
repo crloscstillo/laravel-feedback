@@ -10,7 +10,7 @@ class Feedback {
 	 */
 	public function open($type=null)
 	{
-		return '<div class="feedback '.$type.'" role="alert"><div class="feedback__container">';
+		return '<div class="feedback '.$type.'" role="alert">';
 	}
 
 	/**
@@ -20,7 +20,7 @@ class Feedback {
 	 */
 	public function close()
 	{
-		return '</div></div>';
+		return '</div>';
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Feedback {
 	 */
 	public function text($text)
 	{
-		return '<p class="feedback-text" role="alert">'.$text.'</p>';
+		return '<p class="feedback__text" role="alert">'.$text.'</p>';
 	}
 
 	#           ~ ---------- ~          #
