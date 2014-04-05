@@ -1,0 +1,20 @@
+{
+    "name": "koalabs/feedback",
+    "description": "",
+    "authors": [
+        {
+            "name": "Koalabs",
+            "email": "carlos@koalabs.co"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Koalabs\\Feedback": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
