@@ -10,7 +10,7 @@ class Feedback {
 	 */
 	public function open($type=null)
 	{
-		return '<div class="feedback '.$type.'" role="alert">';
+		return '<div class="feedback '.$type.'">';
 	}
 
 	/**
