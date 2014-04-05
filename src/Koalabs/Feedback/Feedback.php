@@ -57,7 +57,7 @@ class Feedback {
 	 */
 	public function success($text)
 	{
-		return $this->open('success').
+		return $this->open('feedback--success').
 					 $this->text($text).
 					 $this->close();
 	}
@@ -69,7 +69,7 @@ class Feedback {
 	 */
 	public function error($text)
 	{
-		return $this->open('error').
+		return $this->open('feedback--error').
 					 $this->text($text).
 					 $this->close();
 	}
@@ -82,7 +82,7 @@ class Feedback {
 	 */
 	public function update($record)
 	{
-		return $this->open('update').
+		return $this->open('feedback--update').
 					 $this->text($msg).
 					 $this->close();
 	}

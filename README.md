@@ -42,7 +42,7 @@ Will output this markup:
 #### ``Feedback::error($text)``
 Will output this:
 ```html
-<div class="feedback error">
+<div class="feedback feedback--error">
   <p class="feedback__text">Your text here</p>
 </div>
 ```
@@ -50,7 +50,7 @@ Will output this:
 #### ``Feedback::success($text)``
 Will output this:
 ```html
-<div class="feedback success">
+<div class="feedback feedback--success">
   <p class="feedback__text">Your text here</p>
 </div>
 ```
