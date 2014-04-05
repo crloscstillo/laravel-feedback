@@ -4,26 +4,23 @@ A very simple library/bundle for **creating semantic markup for your feedback me
 ## Using Feedback with Laravel
 
 ### Install
-You can install Feedback in three ways:
+You can install Feedback just as you would install any other Laravel package:
 
-- *[Easiest]*  
-Use laravel's artisan via the command line: `php artisan bundle:install feedback`
-- *[Still, easy]*  
-[Download the zip files from github](https://github.com/crlosmify/feedback/zipball/master), unzip them and change the folder name to **feedback**.  
-Then copy the folder into your *bundles directory*.
-- *[Not really hard but...]*  
-cd into your *bundles folder* and use this command: `git clone git@github.com:crlosmify/feedback.git`
+1. Require it through Composer. Use: `composer require koalabs/feedback`
+2. Now open `app/config/app.php` and add this new item to your `providers` array:
 
+```
+Koalabs\Feedback\FeedbackServiceProvider
+```
+
+3. Now in the same configuration file add a new item to your aliases array:
+
+```
+'Feedback'	=>	'Koalabs\Feedback\Facades\Feedback'
+```
 
 That's it.  
-Now you need to **activate the bundle**.  
-Do this by going into your *application/bundles.php* file and adding this line inside the array:
 
-```
-'feedback' => array('auto' => true)
-```
-
-That's it.
 
 ### Usage
 You have three basic methods for creating feedback messages:
@@ -31,12 +28,14 @@ You have three basic methods for creating feedback messages:
 1. ``Feedback::message($text)``, which creates a **neutral message**.
 2. ``Feedback::error($text)``, which creates an **error message**.
 3. ``Feedback::success($text)``, which creates a **success message**.
+4. ``Feedback::update($text)``, which creates an **update message**.
+4. ``Feedback::field_error($text)``, which creates an **inline feedback message**. It's good for form validation
 
 #### ``Feedback::message($text)``
 Will output this markup:
 ```html
 <div class="feedback">
-  <p class="feedback-text">Your text here</p>
+  <p class="feedback__text">Your text here</p>
 </div>
 ```
 
@@ -44,7 +43,7 @@ Will output this markup:
 Will output this:
 ```html
 <div class="feedback error">
-  <p class="feedback-text">Your text here</p>
+  <p class="feedback__text">Your text here</p>
 </div>
 ```
 
@@ -52,27 +51,10 @@ Will output this:
 Will output this:
 ```html
 <div class="feedback success">
-  <p class="feedback-text">Your text here</p>
+  <p class="feedback__text">Your text here</p>
 </div>
 ```
 
-You can style your feedback messages however you like by using these classes.  
-I made no assumptions about this.
-
-#### Other feedback types
-There are also some *hidden helper methods*. These are just extensions of the previous three:
-
-- ``Feedback::added($record)``, which creates a **message for when you add something**.
-- ``Feedback::updated($record)``, which creates a **message for update notifications**.
-- ``Feedback::deleted($record)``, which creates a default **message when the user deletes something**.
-- ``Feedback::field_error($text)`` is great for *inline validation errors*.
 
 #### Styling the feedback messages
-You can style the feedback messages any way you want. I made no assumptions about this.  
-Nevertheless, i also added a basic example of how you could style it.  
-Just publish the files of the bundle to your public directory, like this:
-
-```
-php artisan bundle:publish
-```
-Now look inside the *public/feedback* folder.
+You can style the feedback messages any way you want by using the classes.
