@@ -93,7 +93,7 @@ class Feedback {
 	 * @param  string $text
 	 * @return string
 	 */
-	public static function field_error($text)
+	public static function fieldError($text)
 	{
 		return '<span class="field-error"><i class="icon icon-spam"></i>'.$text.'</span>';
 	}
